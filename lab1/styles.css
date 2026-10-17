@@ -1,0 +1,220 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", sans-serif;
+  color: #182230;
+  background: #edf2f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.application {
+  width: min(760px, calc(100% - 32px));
+  margin: 48px auto;
+}
+
+.header,
+.workspace,
+.menu {
+  background: #ffffff;
+  border: 1px solid #dce4ed;
+  box-shadow: 0 12px 30px rgb(35 52 73 / 8%);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 28px 32px;
+  border-radius: 18px 18px 0 0;
+}
+
+.eyebrow,
+.section-label {
+  margin: 0 0 8px;
+  color: #52677f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: clamp(26px, 5vw, 38px);
+}
+
+.journal-number {
+  margin: 2px 0 0;
+  white-space: nowrap;
+  color: #52677f;
+}
+
+.workspace {
+  padding: 32px;
+  border-top: 0;
+}
+
+.workspace h2 {
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.result {
+  margin-bottom: 0;
+  min-height: 24px;
+  color: #52677f;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 24px 32px 32px;
+  border-top: 0;
+  border-radius: 0 0 18px 18px;
+}
+
+.menu-button {
+  display: grid;
+  gap: 6px;
+  padding: 20px;
+  color: #182230;
+  text-align: left;
+  background: #f5f8fb;
+  border: 1px solid #dce4ed;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color .15s, transform .15s, background .15s;
+}
+
+.menu-button:hover,
+.menu-button:focus-visible {
+  background: #eaf3ff;
+  border-color: #3478c5;
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.menu-button span {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.menu-button small {
+  color: #52677f;
+}
+
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgb(14 27 42 / 48%);
+}
+
+.dialog {
+  width: min(460px, 100%);
+  padding: 28px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgb(14 27 42 / 25%);
+}
+
+.dialog h2 {
+  margin-bottom: 12px;
+}
+
+.dialog p {
+  color: #52677f;
+  line-height: 1.5;
+}
+
+.range-value {
+  display: block;
+  margin: 20px 0 12px;
+  color: #2368ad;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #3478c5;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.button {
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button:focus-visible {
+  outline: 3px solid rgb(52 120 197 / 30%);
+  outline-offset: 2px;
+}
+
+.button.primary {
+  color: #ffffff;
+  background: #2368ad;
+}
+
+.button.primary:hover {
+  background: #1c548d;
+}
+
+.button.secondary {
+  color: #34495e;
+  background: #ffffff;
+  border-color: #c7d2de;
+}
+
+.button.secondary:hover {
+  background: #f1f5f9;
+}
+
+@media (max-width: 560px) {
+  .application {
+    margin: 16px auto;
+  }
+
+  .header {
+    display: block;
+  }
+
+  .journal-number {
+    margin-top: 16px;
+  }
+
+  .menu {
+    grid-template-columns: 1fr;
+  }
+}
