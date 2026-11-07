@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Крапка</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="application">
+    <nav class="menu-bar" aria-label="Головне меню">
+      <details class="menu">
+        <summary>Файл</summary>
+        <button id="clear-canvas" type="button">Очистити</button>
+      </details>
+      <details class="menu">
+        <summary>Об'єкти</summary>
+        <button class="shape-choice" data-shape="point" type="button">Крапка</button>
+        <button class="shape-choice" data-shape="line" type="button">Лінія</button>
+        <button class="shape-choice" data-shape="rectangle" type="button">Прямокутник</button>
+        <button class="shape-choice" data-shape="ellipse" type="button">Еліпс</button>
+      </details>
+      <details class="menu">
+        <summary>Довідка</summary>
+        <button id="show-help" type="button">Про програму</button>
+      </details>
+    </nav>
+
+    <section class="workspace">
+      <div class="canvas-frame">
+        <canvas id="editor-canvas" width="900" height="560"></canvas>
+      </div>
+    </section>
+
+    <dialog id="help-dialog">
+      <p>Графічний редактор об'єктів. Оберіть форму в меню «Об'єкти» та намалюйте її на полі.</p>
+      <button id="close-help" type="button">Закрити</button>
+    </dialog>
+  </main>
+
+  <script type="module" src="./Lab2.js"></script>
+</body>
+</html>
