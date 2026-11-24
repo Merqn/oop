@@ -33,6 +33,7 @@ export class Editor {
     this.count = 0;
     this.currentShape = null;
     this.repaint();
+    this.onMessage(`Об'єктів: 0 / ${MAX_SHAPES}`);
   }
 
   repaint() {
@@ -62,6 +63,16 @@ export class Editor {
     const ShapeType = SHAPE_TYPES[this.currentType];
     this.currentShape = new ShapeType();
     this.currentShape.setStart(this.#getPosition(event));
+
+    if (this.currentType === 'point') {
+      this.shapes[this.count] = this.currentShape;
+      this.count += 1;
+      this.currentShape = null;
+      this.repaint();
+      this.onMessage(`Об'єктів: ${this.count} / ${MAX_SHAPES}`);
+      return;
+    }
+
     this.canvas.setPointerCapture(event.pointerId);
     this.repaint();
   }

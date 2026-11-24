@@ -5,6 +5,11 @@ const canvas = document.querySelector('#editor-canvas');
 const editor = new Editor(canvas);
 const menus = document.querySelectorAll('.menu');
 const objectButtons = document.querySelectorAll('.shape-choice');
+const status = document.querySelector('#status');
+
+editor.onMessage = (message) => {
+  status.textContent = message;
+};
 
 function closeMenus() {
   menus.forEach((menu) => {

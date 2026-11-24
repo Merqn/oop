@@ -79,6 +79,11 @@ summary {
   overflow: auto;
 }
 
+#status {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
 #editor-canvas {
   display: block;
   width: 100%;
