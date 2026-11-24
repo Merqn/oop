@@ -15,9 +15,4 @@ export class Point extends Shape {
     context.fill();
     context.restore();
   }
-
-
-
-  drawPreview(_context) {
-  }
 }

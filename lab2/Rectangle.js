@@ -19,10 +19,4 @@ export class Rectangle extends Shape {
     context.stroke();
     context.restore();
   }
-
-
-
-  drawPreview(context) {
-    context.rect(this.start.x, this.start.y, this.end.x - this.start.x, this.end.y - this.start.y);
-  }
 }

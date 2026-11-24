@@ -17,11 +17,4 @@ export class Line extends Shape {
     context.stroke();
     context.restore();
   }
-
-
-
-  drawPreview(context) {
-    context.moveTo(this.start.x, this.start.y);
-    context.lineTo(this.end.x, this.end.y);
-  }
 }
