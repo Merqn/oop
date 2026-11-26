@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+  color: #182230;
+  background: #ffffff;
+}
+
+button {
+  font: inherit;
+}
+
+.application {
+  width: min(1000px, 100%);
+  margin: 0 auto;
+}
+
+.menu-bar,
+.toolbar {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid #777777;
+  background: #eeeeee;
+}
+
+.menu-bar {
+  position: relative;
+  z-index: 2;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu-title {
+  min-height: 34px;
+  padding: 6px 12px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-title:hover,
+.menu.open .menu-title {
+  background: #dcdcdc;
+}
+
+.menu-popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 3;
+  display: none;
+  min-width: 190px;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+}
+
+.menu.open .menu-popup {
+  display: block;
+}
+
+.menu-popup button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 34px;
+  padding: 6px 10px;
+  border: 0;
+  border-bottom: 1px solid #eeeeee;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-popup button:last-child {
+  border-bottom: 0;
+}
+
+.menu-popup button:hover,
+.menu-popup button:focus-visible {
+  background: #e4e4e4;
+  outline: none;
+}
+
+.menu-check {
+  width: 22px;
+  visibility: hidden;
+}
+
+.menu-popup [aria-checked="true"] .menu-check {
+  visibility: visible;
+}
+
+.toolbar {
+  gap: 2px;
+  margin-top: 6px;
+}
+
+.tool-button {
+  display: grid;
+  width: 38px;
+  height: 36px;
+  place-items: center;
+  padding: 5px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #182230;
+  cursor: pointer;
+}
+
+.tool-button:hover,
+.tool-button:focus-visible,
+.tool-button.pressed {
+  border-color: #7a9cc6;
+  background: #dce8f7;
+  outline: none;
+}
+
+.tool-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 10;
+  display: none;
+  padding: 5px 8px;
+  border: 1px solid #777777;
+  background: #ffffe1;
+  color: #182230;
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.tooltip.visible {
+  display: block;
+}
+
+.workspace {
+  margin-top: 8px;
+  padding: 8px;
+  border: 1px solid #777777;
+}
+
+.canvas-frame {
+  overflow: auto;
+}
+
+#editor-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #777777;
+  background: #ffffff;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+#status {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+dialog {
+  max-width: 420px;
+  padding: 20px;
+  border: 1px solid #777777;
+}
+
+@media (max-width: 560px) {
+  body {
+    margin: 8px;
+  }
+}
