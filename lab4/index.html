@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab4</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="application">
+    <nav id="menubar" class="menu-bar" aria-label="Головне меню"></nav>
+
+    <div id="toolbar" class="toolbar" role="toolbar" aria-label="Інструменти малювання"></div>
+
+    <section class="workspace" aria-label="Робоче поле редактора">
+      <div class="canvas-frame">
+        <canvas id="editor-canvas" width="1000" height="620"></canvas>
+      </div>
+      <div id="status" role="status">Об’єктів: 0 / 113</div>
+    </section>
+
+    <dialog id="help-dialog">
+      <p>Графічний редактор об’єктів ЛР4. Оберіть фігуру в меню «Об’єкти» або на панелі інструментів.</p>
+      <form method="dialog"><button type="submit">Закрити</button></form>
+    </dialog>
+  </main>
+
+  <script type="module" src="./Lab4.js"></script>
+</body>
+</html>
