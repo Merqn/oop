@@ -102,6 +102,13 @@ button {
   margin-top: 6px;
 }
 
+.toolbar-separator {
+  align-self: stretch;
+  width: 1px;
+  margin: 3px 4px;
+  background: #aaaaaa;
+}
+
 .tool-button {
   display: grid;
   width: 38px;

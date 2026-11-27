@@ -25,6 +25,11 @@ export class MainWindow {
       'menu-objects'
     );
     this.menu.addMenu('Довідка', [{ id: CMD_ABOUT, text: 'Про програму' }]);
+    this.toolbar.addButton(
+      CMD_CLEAR,
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3m3 0-1 13H7L6 7m4 3v7m4-7v7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    );
+    this.toolbar.addSeparator();
     TOOLS.forEach((tool) => this.toolbar.addButton(tool.id, tool.icon));
     this.toolbar.setPressed(this.editor.currentType);
     this.onInitMenuPopup(this.objectsMenu);

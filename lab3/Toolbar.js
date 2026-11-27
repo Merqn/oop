@@ -28,6 +28,13 @@ export class Toolbar {
     this.buttons.set(id, button);
   }
 
+  addSeparator() {
+    const separator = document.createElement('span');
+    separator.className = 'toolbar-separator';
+    separator.setAttribute('role', 'separator');
+    this.container.appendChild(separator);
+  }
+
   setPressed(id) {
     for (const [buttonId, button] of this.buttons) {
       const selected = buttonId === id;
